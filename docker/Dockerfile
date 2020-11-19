@@ -17,9 +17,8 @@ RUN python3 -m pip install --no-cache-dir --upgrade git+https://github.com/maxim
 
 WORKDIR /app
 
-COPY ./server.conf /app
-COPY ./auth.db /app
+COPY . /etc/scrapy-do
 
 EXPOSE 7654
 
-CMD scrapy-do -n scrapy-do --config /app/server.conf
+CMD scrapy-do -n scrapy-do --config /etc/scrapy-do/server.conf
